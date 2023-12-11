@@ -1,0 +1,33 @@
+﻿@model VentaDeMiel2022.Web.Models.Localidad.LocalidadEditVm
+
+@{ ViewBag.Title = "Delete";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+
+        <h2>Desea borrar la localidad</h2>
+
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreLocalidad)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+@Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-success" })
+                </div>}
+</div>

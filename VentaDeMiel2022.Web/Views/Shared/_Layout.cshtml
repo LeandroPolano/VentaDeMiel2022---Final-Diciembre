@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Agrega la regla de estilo para el fondo -->
+    
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html">Venta de Miel</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+           
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+
+                        <div class="sb-sidenav-menu-heading">Implementos</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-globe"></i></div>
+                            Ubicaciones
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="@Url.Action("Index","Pais")">Paises</a>
+                                <a class="nav-link" href="@Url.Action("Index","Provincia")">Provincias</a>
+                                <a class="nav-link" href="@Url.Action("Index","Localidad")">Localidades</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages1" aria-expanded="false" aria-controls="collapsePages1">
+                            <div class="sb-nav-link-icon"><i class="fas fa-person-booth"></i></div>
+                            Personas
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages1" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages1">
+                                <a class="nav-link" href="@Url.Action("Index","Cliente")">Clientes</a>
+                                <a class="nav-link" href="@Url.Action("Index","Proveedor")">Proveedores</a>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link Administración" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages2" aria-expanded="false" aria-controls="collapsePages2">
+                            <div class="sb-nav-link-icon"><i class="fas fa-person-booth"></i></div>
+                            Administración
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages2" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages2">
+                                <a class="nav-link" href="@Url.Action("Index","Venta")">Historial Ventas</a>
+                                <a class="nav-link" href="@Url.Action("Index","DetalleVenta")">Detalle de la venta</a>
+
+                            </nav>
+                        </div>
+
+                        <a class="nav-link Administración" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages3" aria-expanded="false" aria-controls="collapsePages3">
+                            <div class="sb-nav-link-icon"><i class="fas fa-person-booth"></i></div>
+                            Bienes
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages3" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages3">
+                                <a class="nav-link" href="@Url.Action("Index","TiposEnvases")">Tipos De Envases</a>
+                                <a class="nav-link" href="@Url.Action("Index","Envase")">Envases de la venta</a>
+
+                            </nav>
+                        </div>
+
+
+
+                    </div>
+                </div>
+             
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <style>
+                        body {
+                            background-image: url("C:\Users\Leandro\Pictures\FondoAbeja.jpeg");
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                        }
+                    </style>
+                    @RenderBody()
+                </div>
+            </main>
+           
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/complementos")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

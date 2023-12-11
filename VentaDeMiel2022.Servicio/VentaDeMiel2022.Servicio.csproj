@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12817EB8-81F4-4DA2-93E0-5A1C82827A15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VentaDeMiel2022.Servicio</RootNamespace>
+    <AssemblyName>VentaDeMiel2022.Servicio</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\Facades\IServicioEnvase.cs" />
+    <Compile Include="Servicios\Facades\IServicioTiposEnvases.cs" />
+    <Compile Include="Servicios\Facades\IServicioProveedor.cs" />
+    <Compile Include="Servicios\Facades\IServicioClientes.cs" />
+    <Compile Include="Servicios\Facades\IServicioLocalidad.cs" />
+    <Compile Include="Servicios\Facades\IServicioPais.cs" />
+    <Compile Include="Servicios\Facades\IServicioProvincia.cs" />
+    <Compile Include="Servicios\Facades\IServicioTipoDeDocumentos.cs" />
+    <Compile Include="Servicios\Facades\IServicioVentas.cs" />
+    <Compile Include="Servicios\ServicioCliente.cs" />
+    <Compile Include="Servicios\ServicioLocalidad.cs" />
+    <Compile Include="Servicios\ServicioEnvase.cs" />
+    <Compile Include="Servicios\ServicioTiposEnvases.cs" />
+    <Compile Include="Servicios\ServicioPaises.cs" />
+    <Compile Include="Servicios\ServicioProveedor.cs" />
+    <Compile Include="Servicios\ServicioProvincia.cs" />
+    <Compile Include="Servicios\ServicioTipoDeDocumentos.cs" />
+    <Compile Include="Servicios\ServicioVentas.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VentaDeMiel2022.Datos\VentaDeMiel2022.Datos.csproj">
+      <Project>{93d53f62-7bdb-41d0-bd40-e57c73185b46}</Project>
+      <Name>VentaDeMiel2022.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VentaDeMiel2022.Entidades\VentaDeMiel2022.Entidades.csproj">
+      <Project>{7b5b84ce-1426-4b91-84a1-a48a83aca4e5}</Project>
+      <Name>VentaDeMiel2022.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

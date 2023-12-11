@@ -1,0 +1,29 @@
+﻿@model VentaDeMiel2022.Web.ViewModels.TipoEnvase.TipoEnvaseListVm
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <h4>Desea borrar el Tipo de Envase </h4>
+
+        <dd>
+            <h5>
+                @Html.DisplayFor(model => model.Descripcion)
+            </h5>
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-success" })
+        </div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model VentaDeMiel2022.Web.Models.Localidad.LocalidadEditVm
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p></p>
+<h5>Nueva Localidad</h5>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NombreLocalidad, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NombreLocalidad, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NombreLocalidad, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProvinciaId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ProvinciaId, new SelectList(Model.ProvinciasDto, "ProvinciaId", "NombreProvincia"), "Seleccione una Provincia", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ProvinciaId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <p></p>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+            @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-success" })
+        </div>
+    </div>
+</div>
+}

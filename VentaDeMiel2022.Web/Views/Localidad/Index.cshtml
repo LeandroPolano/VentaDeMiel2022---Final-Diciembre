@@ -1,0 +1,45 @@
+﻿@model List<VentaDeMiel2022.Web.Models.Localidad.LocalidadListVm>
+
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+<ol class="breadcrumb mt-4 mb-4 ">
+</ol>
+
+<h5 class="card-header bg-primary text-white">
+    Listado de Localidades
+
+</h5>
+
+
+<div class="card-body">
+    <p>
+        <a href="@Url.Action("Create","Localidad")" class="btn btn-primary">Crear Nueva Localidad</a>
+    </p>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().NombreLocalidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Provincia)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.NombreLocalidad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Provincia)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit","Localidad",new{id=item.LocalidadId})" class="btn btn-warning"><i class="fas fa-pen"></i></a>
+        <a href="@Url.Action("Delete","Localidad",new{id=item.LocalidadId})" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+    </td>
+</tr>}
+
+    </table>
+</div>

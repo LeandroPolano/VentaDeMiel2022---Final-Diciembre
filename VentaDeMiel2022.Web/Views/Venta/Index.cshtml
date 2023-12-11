@@ -1,0 +1,28 @@
+﻿@model List<VentaDeMiel2022.Entidades.Dtos.VentaListDto>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Ventas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.FirstOrDefault().Total)</td>
+            <td>@Html.DisplayNameFor(model => model.FirstOrDefault().Fecha)</td>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var Venta in Model)
+        {
+            <tr>
+
+                <td> @Html.DisplayFor(ModelItem => Venta.Total)</td>
+
+                <td> @Html.DisplayFor(ModelItem => Venta.Fecha)</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
